@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/*
-   *main - receives no arguments
+
+/**
+   *main - Entry point of the programs
    *
-   *return: 0(success)
+   *Description: print a random positive, zero or negative number
+   *
+   *Return: 0 (success)
 */
 
 int main(void)
