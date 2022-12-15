@@ -3,22 +3,28 @@
 /**
   *main - Entry point of the program
   *
-  *Description: prints a number in base 16
+  *Description: prints base 16 all numbers in lowercase
   *
   *Return: Alwayd 0 (Success)
 */
 
 int main(void)
 {
-	int num;
-	char la;
+	int num '0';
+	char letter = 'a';
 
-	for (num = 0; num < 10; num++)
-		printf((num % 10) + '0');
+	while (num <= '9')
+	{
+		putchar(num);
+		num++;
+	}
+	while (letter <= 'f')
+	{
+		putchar(letter);
+		letter++;
+	}
 
-	for (la = 'a'; la <= 'f'; la++)
-		putchar(la);
-	putchar('\n')
+	putchar('\n');
 
 	return (0);
 
