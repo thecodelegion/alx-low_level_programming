@@ -8,7 +8,7 @@
  *
  * @src: source of memory area
  *
- * @dest: destination memory area 
+ * @dest: destination memory area
  *
  * Return: a pointer to @dest
  */
