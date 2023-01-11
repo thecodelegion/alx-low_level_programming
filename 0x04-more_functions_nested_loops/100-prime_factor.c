@@ -4,7 +4,7 @@
 /**
  * main - entry point of the program
  *
- *Description: finds and prints the largest prime factor of the number 612852475143
+ *Description: prints the largest prime factor of the number 612852475143
  *
  * Return: 0
  */
