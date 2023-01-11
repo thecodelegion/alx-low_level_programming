@@ -4,7 +4,7 @@
 /**
  * main - entry point of the program.
  *
- * Description: prints numbers 1 - 100 
+ * Description: prints numbers 1 - 100
  * Fizz for multiples of 3, Buzz for multiples of 5
  * and FizzBuzz for multiples of both
  *
