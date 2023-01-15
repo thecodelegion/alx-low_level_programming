@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * malloc_checked - if malloc fails, the malloc_checked function 
+ * malloc_checked - if malloc fails, the malloc_checked function
  * will cause normal process termination with a status value of 98
  *
  * @b: allocated memory
