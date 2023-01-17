@@ -1,1 +1,1 @@
-Pointers, arrays and strings in c
+Structures and Type Definitions in C
