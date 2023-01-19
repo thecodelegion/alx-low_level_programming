@@ -4,53 +4,85 @@
 #include <stdarg.h>
 
 /**
- * print_all - Prints all of the arguments when specified
- *
- * @format: specifies the necessary operations
- &
- * Return: void
+ * print_string - a function that prints a string
+ * @args: string arguments
+ */
+
+void print_string(va_list args)
+{
+	char *str;
+
+	str = va_arg(args, char *);
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s",  str);
+}
+
+/**
+ * print_char - a function that prints a character
+ * @args: character argument
+ */
+
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+
+/**
+ * print_int - a function that prints integers
+ * @args: integer argument
+ */
+
+void print_int(va_list args)
+{
+	printf("%d", va_arg(args, int));
+}
+
+/**
+ * print_float - a function that prints a float
+ * @args: float argument
+ */
+
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ * print_all - a function that prints anything.
+ * @format: types of arguments to be passed
  */
 
 void print_all(const char * const format, ...)
 {
-	int i;
-	int flag;
-	char *str;
-	va_list a_list;
+	va_list args;
+	char *sep;
+	print_form_t print_form[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string}
+	};
+	int i, j;
 
-	va_start(a_list, format);
+	va_start(args, format);
 	i = 0;
+	sep = "";
 	while (format != NULL && format[i] != '\0')
 	{
-		switch (format[i])
+		j = 0;
+		while (j < 4)
 		{
-			case 'c':
-				printf("%c", va_arg(a_list, int));
-				flag = 0;
-				break;
-			case 'i':
-				printf("%i", va_arg(a_list, int));
-				flag = 0;
-				break;
-			case 'f':
-				printf("%f", va_arg(a_list, double));
-				flag = 0;
-				break;
-			case 's':
-				str = va_arg(a_list, char*);
-				if (str == NULL)
-					str = "(nil)";
-				printf("%s", str);
-				flag = 0;
-				break;
-			default:
-				flag = 1;
-				break;
+			if (*print_form[j].c == format[i])
+			{
+				printf("%s", sep);
+				print_form[j].f(args, sep);
+				sep = ", ";
+			}
+			j++;
 		}
-		if (format[i + 1] != '\0' && flag == 0)
-			printf(", ");
 		i++;
 	}
 	printf("\n");
-	va_end(a_list);
+	va_end(args);
 }
