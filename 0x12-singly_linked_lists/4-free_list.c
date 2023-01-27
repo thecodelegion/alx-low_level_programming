@@ -5,7 +5,7 @@
 /**
  * free_list - free up memory allocated to a list
  *
- * @head: A pointer to the first node of the list 
+ * @head: A pointer to the first node of the list
  */
 
 void free_list(list_t *head)
