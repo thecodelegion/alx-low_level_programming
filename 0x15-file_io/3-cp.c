@@ -4,12 +4,10 @@
 
 /**
  * check97 - checks for the correct number of arguments
- ^
  * @argc: number of arguments
  *
  * Return: void
  */
-
 void check97(int argc)
 {
 	if (argc != 3)
@@ -21,7 +19,6 @@ void check97(int argc)
 
 /**
  * check98 - checks that file_from exists and can be read
- *
  * @check: checks if true of false
  * @file: file_from name
  * @fd_from: file descriptor of file_from, or -1
@@ -29,7 +26,6 @@ void check97(int argc)
  *
  * Return: void
  */
-
 void check98(ssize_t check, char *file, int fd_from, int fd_to)
 {
 	if (check == -1)
@@ -45,7 +41,6 @@ void check98(ssize_t check, char *file, int fd_from, int fd_to)
 
 /**
  * check99 - checks that file_to was created and/or can be written to
- *
  * @check: checks if true of false
  * @file: file_to name
  * @fd_from: file descriptor of file_from, or -1
@@ -53,7 +48,6 @@ void check98(ssize_t check, char *file, int fd_from, int fd_to)
  *
  * Return: void
  */
-
 void check99(ssize_t check, char *file, int fd_from, int fd_to)
 {
 	if (check == -1)
@@ -69,13 +63,11 @@ void check99(ssize_t check, char *file, int fd_from, int fd_to)
 
 /**
  * check100 - checks that file descriptors were closed properly
- *
  * @check: checks if true or false
  * @fd: file descriptor
  *
  * Return: void
  */
-
 void check100(int check, int fd)
 {
 	if (check == -1)
@@ -84,16 +76,13 @@ void check100(int check, int fd)
 		exit(100);
 	}
 }
-
 /**
- * main - copies the content of a file to another file.
- *
+ * main - opies the content of a file to another file.
  * @argc: number of arguments passed
  * @argv: array of pointers to the arguments
  *
  * Return: 0 on success
  */
-
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, close_to, close_from;
